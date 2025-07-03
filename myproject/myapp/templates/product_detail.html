@@ -1,0 +1,76 @@
+<!-- templates/product_detail.html (UPDATED CODE) -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ product.name }} - Product Details</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        .product-image-large { height: 450px; width: 100%; object-fit: cover; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+    </style>
+</head>
+<body class="bg-light">
+    <!-- Navbar (Aapka pehle se hi theek hai) -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <!-- ... Navbar ka poora code ... -->
+    </nav>
+    
+    <div class="container my-5">
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+                    {{ message }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            {% endfor %}
+        {% endif %}
+
+        <div class="card p-4 shadow-sm">
+            <div class="row">
+                <div class="col-md-6">
+                    {% if product.image %}
+                        <img src="{{ product.image.url }}" class="product-image-large" alt="{{ product.name }}">
+                    {% else %}
+                        <div class="bg-secondary text-white d-flex align-items-center justify-content-center product-image-large">
+                            <h3 class="m-0">Image Not Available</h3>
+                        </div>
+                    {% endif %}
+                </div>
+                <div class="col-md-6 ps-lg-5">
+                    <h1 class="display-5">{{ product.name }}</h1>
+                    <a href="{% url 'category_products' product.category.slug %}" class="text-muted fs-5 text-decoration-none">{{ product.category.name }}</a>
+                    <h2 class="text-success my-3 fw-bold">${{ product.price }}</h2>
+                    <p class="lead">{{ product.description }}</p>
+                    
+                    <!-- === START: UPDATED BUTTON LOGIC === -->
+                    <div class="mt-4">
+                        {% if user.is_authenticated %}
+                            {% if already_requested %}
+                                <button class="btn btn-warning btn-lg" disabled><i class="fas fa-check-circle"></i> Request Sent</button>
+                                <p class="text-muted mt-2">Check <a href="{% url 'my_requests' %}">"My Requests"</a> for status.</p>
+                            {% else %}
+                                <!-- Form ke zariye request bhejein -->
+                                <form method="POST" action="{% url 'request_product' product.id %}">
+                                    {% csrf_token %}
+                                    <button type="submit" class="btn btn-primary btn-lg"><i class="fas fa-paper-plane"></i> Request This Product</button>
+                                </form>
+                            {% endif %}
+                        {% else %}
+                            <a href="{% url 'login' %}?next={{ request.path }}" class="btn btn-primary btn-lg">Login to Request</a>
+                        {% endif %}
+                    </div>
+                    <!-- === END: UPDATED BUTTON LOGIC === -->
+
+                </div>
+            </div>
+        </div>
+        <div class="mt-5"><a href="{% url 'home' %}" class="btn btn-outline-secondary"><i class="fas fa-arrow-left"></i> Back to Store</a></div>
+    </div>
+    <!-- Footer -->
+    <footer class="text-center p-3 mt-4 bg-dark text-white"><p class="m-0">© {% now "Y" %} My Awesome Store. All Rights Reserved.</p></footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

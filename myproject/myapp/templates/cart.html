@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Your Shopping Cart</title>
+    <!-- Bootstrap CSS -->
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="container">
+        <h1>Your Cart</h1>
+        {% for item in items %}
+        <div>
+            <p>{{ item.product.name }}</p>
+            <p>Quantity: {{ item.quantity }}</p>
+            <p>Price: ${{ item.get_total }}</p>
+        </div>
+        <hr>
+        {% endfor %}
+        <h3>Total: ${{ order.get_cart_total }}</h3>
+        <a href="#">Checkout</a>
+    </div>
+</body>
+</html>
