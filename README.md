@@ -3,7 +3,6 @@
 A simple yet robust Django-based web application designed for managing a product catalog and allowing users to request products. This system is ideal for small stores, inventory management, or any scenario where users need to browse and request items.
 
 ## 📸 Project Screenshots
-
 <p align="center">
   <img src="https://raw.githubusercontent.com/NoorMustafa4556/Shop-Store-Management-Django-/main/myproject/myapp/static/images/1.jpg" alt="Screenshot 1" width="30%" />
   <img src="https://raw.githubusercontent.com/NoorMustafa4556/Shop-Store-Management-Django-/main/myproject/myapp/static/images/2.jpg" alt="Screenshot 2" width="30%" />
