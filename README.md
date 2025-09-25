@@ -132,7 +132,7 @@ Follow these instructions to get a copy of the project up and running on your lo
 Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/NoorMustafa4556/Shop-Store-Management-Django/issues) of this repository.
 
 ---
-# 👋 Hi, I'm Noor Mustafa
+# 👋🏻  Hi, I'm Noor Mustafa
 
 A passionate and results-driven **Flutter Developer** from **Bahawalpur, Pakistan**, specializing in building elegant, scalable, and high-performance cross-platform mobile applications using **Flutter** and **Dart**.
 
