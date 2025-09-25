@@ -54,6 +54,8 @@ Follow these instructions to get a copy of the project up and running on your lo
 1.  **Clone the repository:**
     ```bash
     git clone https://github.com/NoorMustafa4556/Shop-Store-Management-Django.git
+    ```
+    ```bash
     cd Shop-Store-Management-Django
     ```
 
@@ -61,11 +63,15 @@ Follow these instructions to get a copy of the project up and running on your lo
     *   **Windows:**
         ```bash
         python -m venv env
+        ```
+        ```bash
         .\env\Scripts\activate
         ```
     *   **macOS / Linux:**
         ```bash
         python3 -m venv env
+        ```
+        ```bash
         source env/bin/activate
         ```
 
