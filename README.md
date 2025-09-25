@@ -55,11 +55,12 @@ Follow these instructions to get a copy of the project up and running on your lo
     ```bash
     git clone https://github.com/NoorMustafa4556/Shop-Store-Management-Django.git
     ```
+2.  **Navigate To The Project Directory:**
     ```bash
     cd Shop-Store-Management-Django
     ```
 
-2.  **Create and activate a virtual environment:**
+3.  **Create and activate a virtual environment:**
     *   **Windows:**
         ```bash
         python -m venv env
@@ -75,32 +76,32 @@ Follow these instructions to get a copy of the project up and running on your lo
         source env/bin/activate
         ```
 
-3.  **Install the required packages:**
+4.  **Install the required packages:**
     The `requirements.txt` file contains all the necessary Python packages.
     ```bash
     pip install -r requirements.txt
     ```
 
-4.  **Navigate into the project directory:**
+5.  **Navigate into the project directory:**
     **Important:** This project's `manage.py` file is inside the `myproject` directory.
     ```bash
     cd myproject
     ```
 
-5.  **Apply database migrations:**
+6.  **Apply database migrations:**
     This will create the necessary database tables.
     ```bash
     python manage.py migrate
     ```
 
-6.  **Create a superuser:**
+7.  **Create a superuser:**
     This will allow you to access the Django admin panel.
     ```bash
     python manage.py createsuperuser
     ```
     Follow the prompts to create an admin username and password.
 
-7.  **Run the development server:**
+8.  **Run the development server:**
     ```bash
     python manage.py runserver
     ```
